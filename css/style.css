@@ -142,8 +142,8 @@ h6 {
 
 .btn-primary-outline {
     background-color: transparent;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color) !important;
+    border: 2px solid var(--white);
+    color: var(--white) !important;
     padding: 10px 24px;
     border-radius: 50px;
     font-weight: 600;
@@ -151,20 +151,20 @@ h6 {
 }
 
 .btn-primary-outline:hover {
-    background-color: var(--primary-color);
-    color: var(--white) !important;
-    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+    background-color: var(--white);
+    color: var(--primary-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Header */
 .site-header {
-    background-color: var(--bg-white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ca020a;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 .header-container {
@@ -175,28 +175,14 @@ h6 {
 
 .logo a {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     text-decoration: none;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: var(--primary-color);
-    letter-spacing: -0.5px;
-}
-
-.logo h1 span {
-    color: var(--secondary-color);
-    font-weight: 400;
-    margin: 0 4px;
-}
-
-.location-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-light);
-    letter-spacing: 2px;
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
 .main-nav ul {
@@ -206,7 +192,7 @@ h6 {
 }
 
 .main-nav a:not(.btn-primary-outline) {
-    color: var(--text-color);
+    color: var(--white);
     font-weight: 600;
     font-size: 0.95rem;
     padding: 10px 0;
@@ -216,7 +202,7 @@ h6 {
 
 .main-nav a:not(.btn-primary-outline):hover,
 .main-nav a.active {
-    color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .main-nav a:not(.btn-primary-outline)::after {
@@ -226,7 +212,7 @@ h6 {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: var(--white);
     transition: width var(--transition-speed);
 }
 
@@ -240,7 +226,7 @@ h6 {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--white);
     cursor: pointer;
 }
 
@@ -673,7 +659,7 @@ h6 {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--bg-white);
+        background-color: #e50101;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
     }
