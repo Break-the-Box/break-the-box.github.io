@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa | BREAK The BOX</title>
+    <meta name="description"
+        content="Programa do evento Break the Box - 20 de Março de 2026, Auditório Joaquim José da Cunha, ISCA-UA, Aveiro.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css?v=1.3">
+    <style>
+        /* Programa Timeline */
+        .programa-section {
+            padding: 80px 20px;
+        }
+
+        .programa-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .programa-header .section-title {
+            margin-bottom: 0;
+        }
+
+        .programa-header .section-title h2 {
+            margin-bottom: 5px;
+        }
+
+        .programa-meta {
+            text-align: right;
+        }
+
+        .programa-meta .date {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .programa-meta .venue {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 130px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #ca020a, #d4453a, #ca020a);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .timeline-time {
+            width: 110px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ca020a;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.15rem;
+            border-radius: 50px;
+            padding: 14px 20px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 3px 10px rgba(202, 2, 10, 0.3);
+            z-index: 2;
+        }
+
+        .timeline-dot {
+            width: 42px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .timeline-dot::after {
+            content: '';
+            width: 14px;
+            height: 14px;
+            background: var(--white);
+            border: 3px solid #ca020a;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--bg-light);
+            padding: 18px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all var(--transition-speed);
+        }
+
+        .timeline-content:hover {
+            background: #eee;
+            transform: translateX(4px);
+        }
+
+        .timeline-item.break-item .timeline-time {
+            background: linear-gradient(135deg, #ca020a, #e0443a);
+        }
+
+        .timeline-item.break-item .timeline-content {
+            background: linear-gradient(135deg, #fff5f5, #ffeded);
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .timeline-content .item-icon {
+            margin-right: 12px;
+            color: #ca020a;
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+
+        /* CTA Section */
+        .programa-cta {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .programa-cta h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .programa-cta p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .programa-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .programa-meta {
+                text-align: left;
+            }
+
+            .timeline::before {
+                left: 55px;
+            }
+
+            .timeline-time {
+                width: 80px;
+                font-size: 0.9rem;
+                padding: 10px 12px;
+            }
+
+            .timeline-dot {
+                width: 30px;
+            }
+
+            .timeline-dot::after {
+                width: 10px;
+                height: 10px;
+            }
+
+            .timeline-content {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .timeline-dot {
+                display: none;
+            }
+
+            .timeline-time {
+                width: auto;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Programa</h1>
+        </div>
+    </section>
+
+    <!-- Program Timeline -->
+    <section class="programa-section">
+        <div class="container">
+            <div class="programa-header">
+                <div class="section-title">
+                    <h2>AGENDA DO EVENTO</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="programa-meta">
+                    <div class="date">20 de Março 2026</div>
+                    <div class="venue">Auditório Joaquim José da Cunha — ISCA-UA</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">09:30</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-coffee item-icon"></i>
+                        Check-in + Welcome coffee + Networking
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-microphone item-icon"></i>
+                        Abertura: Empreender sem fronteiras
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">10:15</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-globe item-icon"></i>
+                        Tendências e oportunidades atuais para internacionalizar
+                    </div>
+                </div>
+
+                <div class="timeline-item break-item">
+                    <div class="timeline-time">12:30</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-utensils item-icon"></i>
+                        Almoço (Não Incluído)
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">14:00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-handshake item-icon"></i>
+                        Recepção de participantes
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">14:30</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-rocket item-icon"></i>
+                        Histórias de sucesso de empreendedorismo internacional
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-time">16h30</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <i class="fas fa-star item-icon"></i>
+                        Closing Keynote
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="programa-cta">
+                <h3>Garante o teu lugar!</h3>
+                <p>As inscrições estão abertas. Não percas esta oportunidade única em Aveiro.</p>
+                <a href="https://forms.ua.pt/index.php?r=survey/index&sid=489197&lang=pt" target="_blank"
+                    class="btn-primary">Inscreve-te Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section class="connect-section bg-light">
+        <div class="container">
+            <div class="connect-content text-center">
+                <h2>Segue-nos para mais novidades</h2>
+                <p>Acompanha todas as atualizações sobre o evento nas nossas redes sociais.</p>
+                <div class="social-large">
+                    <a href="https://www.facebook.com/profile.php?id=61573876528298" target="_blank"
+                        class="social-btn facebook"><i class="fab fa-facebook-f"></i> Seguir no Facebook</a>
+                    <a href="https://www.instagram.com/breakthebox_ua" target="_blank" class="social-btn instagram"><i
+                            class="fab fa-instagram"></i> Seguir no Instagram</a>
+                    <a href="https://www.linkedin.com/company/breakthebox-ua" target="_blank"
+                        class="social-btn linkedin"><i class="fab fa-linkedin-in"></i> Seguir no LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
