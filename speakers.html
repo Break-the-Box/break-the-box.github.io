@@ -14,28 +14,102 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css?v=1.1">
     <style>
-        .coming-soon-section {
-            padding: 120px 20px;
-            text-align: center;
-            min-height: 50vh;
+        /* Speakers Section */
+        .speakers-section {
+            padding: 80px 20px;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .speaker-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .speaker-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            padding: 30px 25px 20px;
+            position: relative;
+        }
+
+        .speaker-header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: var(--bg-white);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .speaker-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
         }
 
-        .coming-soon-icon {
-            font-size: 5rem;
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-            opacity: 0.8;
+        .speaker-icon i {
+            font-size: 1.5rem;
+            color: var(--white);
         }
 
-        .coming-soon-section p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 30px;
+        .speaker-name {
+            color: var(--white);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .speaker-company {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .speaker-role {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .speaker-body {
+            padding: 25px 25px 30px;
+            flex: 1;
+        }
+
+        .speaker-body p {
+            font-size: 0.95rem;
             color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -52,19 +126,107 @@
         </div>
     </section>
 
-    <!-- Speakers Content (Coming Soon) -->
-    <main class="coming-soon-section container">
-        <div class="coming-soon-icon">
-            <i class="fas fa-users"></i>
-        </div>
-        <div class="section-title">
-            <h2>A Anunciar Brevemente</h2>
+    <!-- Speakers Content -->
+    <main class="speakers-section container">
+        <div class="section-title text-center">
+            <h2>Oradores Confirmados</h2>
             <div class="underline center"></div>
         </div>
-        <p>Estamos a reunir um painel de oradores visionários, inovadores e líderes que já quebraram barreiras nas suas
-            respetivas áreas. Fica atento às novidades!</p>
 
-        <a href="index.html" class="btn-secondary">Voltar à Página Principal</a>
+        <div class="speakers-grid">
+
+            <!-- Carlos Figueiredo -->
+            <div class="speaker-card" id="speaker-carlos">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-brain"></i></div>
+                    <div class="speaker-name">Carlos Figueiredo</div>
+                    <div class="speaker-company">Flainar</div>
+                    <div class="speaker-role">Fundador e CEO</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Cruza deep tech e impacto, trabalhando a prescrição cultural aplicada à saúde mental e bem-estar. Com percurso académico em Engenharia Física e Media Digitais, soma mais de 20 anos de experiência e vivências profissionais internacionais.</p>
+                </div>
+            </div>
+
+            <!-- Diego Sampaio -->
+            <div class="speaker-card" id="speaker-diego">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="speaker-name">Diego Sampaio</div>
+                    <div class="speaker-company">Globalfy</div>
+                    <div class="speaker-role">Sócio e CEO</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Empreendedor há mais de 20 anos, lidera a Globalfy, apoiando empresários na constituição, estruturação e gestão de negócios nos EUA. Traz lições práticas de operações cross-border e do que é necessário para transformar ambição global em execução sólida.</p>
+                </div>
+            </div>
+
+            <!-- Humberto Ferreira -->
+            <div class="speaker-card" id="speaker-humberto">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="speaker-name">Humberto Ferreira</div>
+                    <div class="speaker-company">PRAGMASOFT / Wirtek</div>
+                    <div class="speaker-role">Diretor Geral</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Fundou a PRAGMASOFT e liderou durante décadas soluções de software para o setor energético em vários países. Atualmente gere operações em Portugal, Dinamarca e Roménia, partilhando o que muda na prática quando uma PME se integra num grupo internacional.</p>
+                </div>
+            </div>
+
+            <!-- Luís Dias Nunes -->
+            <div class="speaker-card" id="speaker-luis-dn">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-gas-pump"></i></div>
+                    <div class="speaker-name">Luís Dias Nunes</div>
+                    <div class="speaker-company">PRIO</div>
+                    <div class="speaker-role">COO PRIO Supply · Membro da Comissão Executiva</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Com forte vertente operacional, traz uma perspetiva aplicada sobre crescimento e reestruturação em contextos internacionais. O seu percurso inclui projetos e expansão em Portugal, Roménia e EUA, com atuação em logística, aprovisionamento e trading.</p>
+                </div>
+            </div>
+
+            <!-- Janet Morais -->
+            <div class="speaker-card" id="speaker-janet">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-gem"></i></div>
+                    <div class="speaker-name">Janet Morais</div>
+                    <div class="speaker-company">By KOKET Group</div>
+                    <div class="speaker-role">Fundadora e CEO</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Construiu um coletivo internacional de marcas a partir do By KOKET Group, com presença no setor criativo e de luxo. Partilha o que está por trás da construção de marca e da expansão internacional, aliando empreendedorismo e liderança.</p>
+                </div>
+            </div>
+
+            <!-- Luís Almeida -->
+            <div class="speaker-card" id="speaker-luis-a">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="speaker-name">Luís Almeida</div>
+                    <div class="speaker-company">Heliflex</div>
+                    <div class="speaker-role">Export Area Manager</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Lidera estratégias de expansão e consolidação em mercados externos, com experiência acumulada de mais de 20 anos a apoiar crescimento internacional. Traz uma visão prática sobre como abrir mercados, superar barreiras e sustentar a presença lá fora.</p>
+                </div>
+            </div>
+
+            <!-- Marco Oliveira -->
+            <div class="speaker-card" id="speaker-marco">
+                <div class="speaker-header">
+                    <div class="speaker-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="speaker-name">Marco Oliveira</div>
+                    <div class="speaker-company">Uphold</div>
+                    <div class="speaker-role">Chief Innovation Officer (CIO)</div>
+                </div>
+                <div class="speaker-body">
+                    <p>Lidera Enterprise Operations e Marketing na Uphold, focando-se na transição de empresas para finanças on-chain. A Uphold opera em mais de 150 países e agrega infraestrutura de liquidez, custódia, pagamentos, compliance e liquidação, trazendo uma perspetiva de inovação com escala global.</p>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <!-- Subscribe / Connect Section -->
